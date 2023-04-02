@@ -25,17 +25,18 @@ app.post("/login", jsonParser, (req, res) => {
 
   const { username, password } = req.body;
 
+  console.log(`req.body: ${req}, username: ${username}, password: ${password}`);
   const userIndex = userData.findIndex((user) => user.username === username);
 
   if (userIndex === -1) {
-    return res.json("User Not Found");
+    return res.status(400).json("User Not Found");
   }
 
   if (userData[userIndex].password !== password) {
-    return res.json("false");
+    return res.status(400).json("Invalid Password");
   }
 
-  return res.sendStatus(200);
+  return res.status(200).json("OK");
 });
 
 app.listen(5001, () => {
