@@ -5,6 +5,7 @@ import Home from "./components/Home/home";
 import Products from "./components/Products/products";
 import Cart from "./components/Cart/cart";
 import NotFound from "./components/NotFound/notfound";
+import ProtectedRoute from "./components/ProtectedRoute/protectedroute";
 import "./App.css";
 
 const App = () => (
